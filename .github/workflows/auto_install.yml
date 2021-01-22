@@ -21,6 +21,7 @@ jobs:
       run: |
         git submodule update --init --recursive
         cd gd-utils/sa
+        echo "${{ secrets.SA_DLURL }}"
         curl -L "${{ secrets.SA_DLURL }}" -o accounts.zip
         unzip -jq -o accounts.zip
 
